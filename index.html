@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>🌍 Smart Travel Guide</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+</head>
+<body>
+
+<h1>🌍 Smart Travel Guide</h1>
+
+<div class="container">
+
+    <!-- API Keys -->
+    <div class="card">
+        <h2>🔑 API Keys & Endpoints</h2>
+        <input id="visionKey" placeholder="Vision Key">
+        <input id="visionEndpoint" placeholder="Vision Endpoint">
+        <input id="translatorKey" placeholder="Translator Key">
+        <input id="translatorEndpoint" placeholder="Translator Endpoint">
+        <input id="languageKey" placeholder="Language Key">
+        <input id="languageEndpoint" placeholder="Language Endpoint">
+        <input id="speechKey" placeholder="Speech Key">
+        <input id="speechEndpoint" placeholder="Speech Endpoint">
+    </div>
+
+    <!-- Row 1: Image Analysis & Text Analysis -->
+    <div class="row">
+        <div class="col">
+            <div class="card">
+                <h2>🖼️ Image Analysis</h2>
+                <input type="file" id="imageInput">
+                <button onclick="analyzeImage()">Analyze Image</button>
+                <p id="imageResult"></p>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card">
+                <h2>📝 Text Analysis</h2>
+                <textarea id="textInput" placeholder="Enter your travel description..."></textarea>
+                <select id="languageSelect">
+                    <option value="hi">Hindi</option>
+                    <option value="fr">French</option>
+                    <option value="es">Spanish</option>
+                </select>
+                <button onclick="startVoiceInput()">🎤 Speak</button>
+                <button onclick="analyzeAll()">Analyze & Translate</button>
+                <p id="summary"></p>
+                <p id="sentiment"></p>
+                <p id="translation"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Row 2: Map & Nearby Places -->
+    <div class="row">
+        <div class="col">
+            <div class="card">
+                <h2>🗺️ Travel Map</h2>
+                <input id="start" placeholder="Start Location (e.g., Lucknow)">
+                <input id="destination" placeholder="Destination (e.g., Varanasi)">
+                <select id="placeType">
+                    <option value="restaurant">Restaurant</option>
+                    <option value="hotel">Hotel</option>
+                    <option value="school">School</option>
+                    <option value="hospital">Hospital</option>
+                </select>
+                <button onclick="getCurrentLocation()">📍 My Location</button>
+                <button onclick="showRouteAndPlaces()">Show Route & Nearby Places</button>
+                <div id="map"></div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card">
+                <h2>📍 Nearby Places</h2>
+                <ul id="placesList"></ul>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- Leaflet JS -->
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

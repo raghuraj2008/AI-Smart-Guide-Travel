@@ -1,0 +1,98 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #141e30, #243b55);
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    margin: 20px 0;
+    font-size: 2.5rem;
+    color: #00c6ff;
+}
+
+.container { 
+    width: 95%; 
+    margin: auto; 
+}
+
+.row { 
+    display: flex; 
+    flex-wrap: wrap; 
+    margin: 15px -10px; /* spacing between columns */ 
+}
+
+.col { 
+    flex: 1; 
+    min-width: 350px; 
+    padding: 10px; /* spacing inside columns */ 
+}
+
+.card {
+    background: rgba(255,255,255,0.1);
+    padding: 25px;
+    margin: 10px 0;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.card:hover { 
+    transform: translateY(-5px); 
+    box-shadow: 0 12px 25px rgba(0,0,0,0.5); 
+}
+
+input, textarea, select, button {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border-radius: 10px;
+    border: none;
+    box-sizing: border-box;
+}
+
+textarea { 
+    resize: vertical; 
+    min-height: 100px; 
+}
+
+button {
+    background: linear-gradient(90deg,#00c6ff,#0072ff);
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s, transform 0.2s;
+}
+button:hover { 
+    background: linear-gradient(90deg,#0072ff,#00c6ff); 
+    transform: scale(1.05); 
+}
+
+#map {
+    height: 500px;
+    border-radius: 10px;
+    margin-top: 15px;
+}
+
+#placesList {
+    list-style: none;
+    padding: 0;
+    max-height: 500px;
+    overflow-y: auto;
+    margin-top: 10px;
+}
+
+#placesList li {
+    padding: 15px;
+    margin: 8px 0;
+    background: rgba(255,255,255,0.1);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s, background 0.3s;
+}
+#placesList li:hover {
+    background: #00c6ff;
+    transform: scale(1.03);
+}
